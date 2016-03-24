@@ -7,14 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC3C11D41C310215009B9235 /* ColorLib.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C11D31C310215009B9235 /* ColorLib.swift */; };
+		DC8FE5EC1BFB9A1500197DC8 /* ManualRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8FE5EB1BFB9A1500197DC8 /* ManualRateViewController.swift */; };
+		DC8FE5EE1BFBC47300197DC8 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8FE5ED1BFBC47300197DC8 /* Notes.swift */; };
 		DCC9468D1BF98D720095604A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC9468C1BF98D720095604A /* AppDelegate.swift */; };
 		DCC9468F1BF98D720095604A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC9468E1BF98D720095604A /* ViewController.swift */; };
 		DCC946921BF98D720095604A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCC946901BF98D720095604A /* Main.storyboard */; };
 		DCC946941BF98D720095604A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCC946931BF98D720095604A /* Assets.xcassets */; };
 		DCC946971BF98D720095604A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCC946951BF98D720095604A /* LaunchScreen.storyboard */; };
+		DCC9469F1BF98DF10095604A /* RateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC9469E1BF98DF10095604A /* RateViewController.swift */; };
+		DCC946A11BF98E040095604A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC946A01BF98E040095604A /* ListViewController.swift */; };
+		DCC946A31BF98F2D0095604A /* AllTheGlobals.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC946A21BF98F2D0095604A /* AllTheGlobals.swift */; };
+		DCFF6D021C0AD37800A90472 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFF6D011C0AD37800A90472 /* Functions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DC3C11D31C310215009B9235 /* ColorLib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorLib.swift; path = ../../ColorLib.swift; sourceTree = "<group>"; };
+		DC8FE5EB1BFB9A1500197DC8 /* ManualRateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ManualRateViewController.swift; path = ../ManualRateViewController.swift; sourceTree = "<group>"; };
+		DC8FE5ED1BFBC47300197DC8 /* Notes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Notes.swift; path = ../Notes.swift; sourceTree = "<group>"; };
 		DCC946891BF98D720095604A /* Checkout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Checkout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCC9468C1BF98D720095604A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCC9468E1BF98D720095604A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +32,11 @@
 		DCC946931BF98D720095604A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCC946961BF98D720095604A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DCC946981BF98D720095604A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCC9469E1BF98DF10095604A /* RateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RateViewController.swift; path = ../RateViewController.swift; sourceTree = "<group>"; };
+		DCC946A01BF98E040095604A /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListViewController.swift; path = ../ListViewController.swift; sourceTree = "<group>"; };
+		DCC946A21BF98F2D0095604A /* AllTheGlobals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AllTheGlobals.swift; path = ../AllTheGlobals.swift; sourceTree = "<group>"; };
+		DCFF6D011C0AD37800A90472 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Functions.swift; path = ../Functions.swift; sourceTree = "<group>"; };
+		DCFF6D031C0ADAC700A90472 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +53,7 @@
 		DCC946801BF98D720095604A = {
 			isa = PBXGroup;
 			children = (
+				DCFF6D031C0ADAC700A90472 /* MyPlayground.playground */,
 				DCC9468B1BF98D720095604A /* Checkout */,
 				DCC9468A1BF98D720095604A /* Products */,
 			);
@@ -56,6 +72,13 @@
 			children = (
 				DCC9468C1BF98D720095604A /* AppDelegate.swift */,
 				DCC9468E1BF98D720095604A /* ViewController.swift */,
+				DCC946A01BF98E040095604A /* ListViewController.swift */,
+				DCC9469E1BF98DF10095604A /* RateViewController.swift */,
+				DC8FE5EB1BFB9A1500197DC8 /* ManualRateViewController.swift */,
+				DCC946A21BF98F2D0095604A /* AllTheGlobals.swift */,
+				DCFF6D011C0AD37800A90472 /* Functions.swift */,
+				DC8FE5ED1BFBC47300197DC8 /* Notes.swift */,
+				DC3C11D31C310215009B9235 /* ColorLib.swift */,
 				DCC946901BF98D720095604A /* Main.storyboard */,
 				DCC946931BF98D720095604A /* Assets.xcassets */,
 				DCC946951BF98D720095604A /* LaunchScreen.storyboard */,
@@ -136,7 +159,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC8FE5EC1BFB9A1500197DC8 /* ManualRateViewController.swift in Sources */,
+				DCC9469F1BF98DF10095604A /* RateViewController.swift in Sources */,
+				DC8FE5EE1BFBC47300197DC8 /* Notes.swift in Sources */,
 				DCC9468F1BF98D720095604A /* ViewController.swift in Sources */,
+				DC3C11D41C310215009B9235 /* ColorLib.swift in Sources */,
+				DCC946A31BF98F2D0095604A /* AllTheGlobals.swift in Sources */,
+				DCFF6D021C0AD37800A90472 /* Functions.swift in Sources */,
+				DCC946A11BF98E040095604A /* ListViewController.swift in Sources */,
 				DCC9468D1BF98D720095604A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,9 +279,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Checkout/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stephenflores.Checkout;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -260,9 +292,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Checkout/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stephenflores.Checkout;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -285,6 +319,7 @@
 				DCC9469D1BF98D720095604A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
