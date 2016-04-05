@@ -62,7 +62,7 @@ class RateViewController: UIViewController {
     // Press digit
     @IBAction func addDigit(button: UIButton!) {
         if zipDigits < 5 {
-            zipDigits++
+            zipDigits += 1
             zipCode = addDigitInt(zipCode, digit: button.tag)
             zipLabel.text = zipToString()
         } else {
@@ -78,7 +78,7 @@ class RateViewController: UIViewController {
     // backspace
     @IBAction func backspace(button: UIButton!) {
         zipCode = zipCode / 10
-        zipDigits--
+        zipDigits -= 1
         zipLabel.text = zipToString()
         
         releaseButton(button)
@@ -143,8 +143,12 @@ class RateViewController: UIViewController {
 
         // Handle leading zeroes (.length)
         zeroCount = 5 - zipString.characters.count
-        for (var i = 1; i <= zeroCount; i++) {
-            zipString = zipString + "."
+//        for var i = 1; i <= zeroCount; i += 1 { // no ++ increment or c-style for-loop
+//            zipString = zipString + "."
+//        }
+        
+        for _ in 1..<zeroCount { // weird new loop... var i is unneccessary
+            zipString = zipString + "0"
         }
         
         // Return 

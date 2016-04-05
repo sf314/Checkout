@@ -9,8 +9,7 @@
 
 // *** TO DO
 /*
-Remove delete key (it is useless with the clear button).
-Change auto layout for 4 vertical columns (with = as the last).
+ 
 */
 // ***
 
