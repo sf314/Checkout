@@ -147,8 +147,13 @@ class RateViewController: UIViewController {
 //            zipString = zipString + "."
 //        }
         
-        for _ in 1..<zeroCount { // weird new loop... var i is unneccessary
-            zipString = zipString + "0"
+        for _ in 0..<zeroCount { // weird new loop... var i is unneccessary
+            zipString = zipString + "."
+        }
+        
+        if zipString == "0...." {
+            zipString = "....."
+            print("resetting zipString for zeroes!!!")
         }
         
         // Return 

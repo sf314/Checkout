@@ -90,10 +90,10 @@ class MainController: UIViewController {
             switch centCount {
             case 0:
                 currentCost = currentCost + Double(n) / 10
-                centCount++
+                centCount += 1
             case 1:
                 currentCost = currentCost + Double(n) / 100
-                centCount++
+                centCount += 1
             case 2:
                 print("That makes no cents! ")
             default:
