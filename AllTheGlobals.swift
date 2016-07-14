@@ -6,8 +6,16 @@
 //  Copyright © 2015 Stephen Flores. All rights reserved.
 //
 
+/* ***** To Do:
+Add variables to handle Core Data model (just a Double)
+*********/
+
 import Foundation
 import UIKit
+
+// *** User Default tax rate
+var userDefaultTaxRate = 8.8
+//var
 
 
 // Rates
@@ -17,9 +25,9 @@ let goodyearRate = 0.088
 var currentRate = 0.081
 
 // Strings
-var priceListString = "Items: \n" +
-            "First one \n" +
-            "Second one \n";
+var priceListString =   "Items: \n" +
+                        "First one \n" +
+                        "Second one \n";
 
 
 // values

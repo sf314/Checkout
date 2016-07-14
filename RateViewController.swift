@@ -36,6 +36,7 @@ class RateViewController: UIViewController {
         zipCode = 0
         zipDigits = 0
         zipLabel.text = "85287"
+        errorLabel.text = "Set to ASU-Tempe tax rate"
     }
     
     let ColorLib = CustomColorLibrary()
@@ -60,10 +61,10 @@ class RateViewController: UIViewController {
         // Pass button.tag
     
     // Press digit
-    @IBAction func addDigit(button: UIButton!) {
+    @IBAction func pressDigit(button: UIButton!) {
         if zipDigits < 5 {
             zipDigits += 1
-            zipCode = addDigitInt(zipCode, digit: button.tag)
+            zipCode = addDigit(zipCode, digit: button.tag)
             zipLabel.text = zipToString()
         } else {
             print("Too many digits! Cannot exceed 5!")
@@ -125,7 +126,7 @@ class RateViewController: UIViewController {
     
      // This file calls the following functions:
      /*
-     addDigitInt()
+     addDigit()
      */
     
     // Remove digit from ZIP, update label
@@ -134,31 +135,25 @@ class RateViewController: UIViewController {
     }
     
     // Update label given n, return string formatted with placeholder zeroes
+    /*
+     Handle leading zeroes
+     return updated zip string
+     */
     func zipToString() -> String {
         // Vars
         var zipString = String(zipCode)
-            //var tZipString = zipString
         var zeroCount = 0
-            //var tZeroCount = zeroCount
 
-        // Handle leading zeroes (.length)
         zeroCount = 5 - zipString.characters.count
-//        for var i = 1; i <= zeroCount; i += 1 { // no ++ increment or c-style for-loop
-//            zipString = zipString + "."
-//        }
-        
-        for _ in 0..<zeroCount { // weird new loop... var i is unneccessary
+        for _ in 0..<zeroCount {
             zipString = zipString + "."
         }
-        
         if zipString == "0...." {
             zipString = "....."
             print("resetting zipString for zeroes!!!")
         }
         
-        // Return 
         return zipString
-        
     }
     
     // set new currentRate given a vaild zipCode 
@@ -170,6 +165,9 @@ class RateViewController: UIViewController {
                 print("Valid zip code found")
                 print("zipDictionary[zipCode] = \(zipDictionary[zipCode])")
                 currentRate = instanceRate
+                    let def = NSUserDefaults.standardUserDefaults()         // *** Handle setting new user default tax rate
+                    def.setDouble(currentRate, forKey: "userDefaultTaxRate")
+                    def.synchronize()
                 rateLabel.text = "\(instanceRate * 100)%"
                 errorLabel.text = ""
                 updateVars()

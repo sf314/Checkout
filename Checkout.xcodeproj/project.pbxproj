@@ -18,6 +18,7 @@
 		DCC9469F1BF98DF10095604A /* RateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC9469E1BF98DF10095604A /* RateViewController.swift */; };
 		DCC946A11BF98E040095604A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC946A01BF98E040095604A /* ListViewController.swift */; };
 		DCC946A31BF98F2D0095604A /* AllTheGlobals.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC946A21BF98F2D0095604A /* AllTheGlobals.swift */; };
+		DCDCA6601D298F10006908E5 /* Checkout.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DCDCA65E1D298F10006908E5 /* Checkout.xcdatamodeld */; };
 		DCFF6D021C0AD37800A90472 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFF6D011C0AD37800A90472 /* Functions.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		DCC9469E1BF98DF10095604A /* RateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RateViewController.swift; path = ../RateViewController.swift; sourceTree = "<group>"; };
 		DCC946A01BF98E040095604A /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListViewController.swift; path = ../ListViewController.swift; sourceTree = "<group>"; };
 		DCC946A21BF98F2D0095604A /* AllTheGlobals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AllTheGlobals.swift; path = ../AllTheGlobals.swift; sourceTree = "<group>"; };
+		DCDCA65F1D298F10006908E5 /* Checkout.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Checkout.xcdatamodel; sourceTree = "<group>"; };
 		DCFF6D011C0AD37800A90472 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Functions.swift; path = ../Functions.swift; sourceTree = "<group>"; };
 		DCFF6D031C0ADAC700A90472 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,6 +84,7 @@
 				DCC946901BF98D720095604A /* Main.storyboard */,
 				DCC946931BF98D720095604A /* Assets.xcassets */,
 				DCC946951BF98D720095604A /* LaunchScreen.storyboard */,
+				DCDCA65E1D298F10006908E5 /* Checkout.xcdatamodeld */,
 				DCC946981BF98D720095604A /* Info.plist */,
 			);
 			path = Checkout;
@@ -168,6 +171,7 @@
 				DCFF6D021C0AD37800A90472 /* Functions.swift in Sources */,
 				DCC946A11BF98E040095604A /* ListViewController.swift in Sources */,
 				DCC9468D1BF98D720095604A /* AppDelegate.swift in Sources */,
+				DCDCA6601D298F10006908E5 /* Checkout.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +326,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DCDCA65E1D298F10006908E5 /* Checkout.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DCDCA65F1D298F10006908E5 /* Checkout.xcdatamodel */,
+			);
+			currentVersion = DCDCA65F1D298F10006908E5 /* Checkout.xcdatamodel */;
+			path = Checkout.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DCC946811BF98D720095604A /* Project object */;
 }

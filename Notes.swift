@@ -24,7 +24,7 @@ List View:
 
 Add [main] View:
 - 0-9 keyboard
-    - calls addDigitDouble function, passing the value and the digit to be added
+    - calls addDigit function, passing the value and the digit to be added
 - decimal, enter, clear/delete keys
     - decimal does crazy stuff. See plusTax for more info
     - enter sets the totalCost, calls addTax(), updateString()

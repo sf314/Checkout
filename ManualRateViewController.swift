@@ -10,15 +10,7 @@ import UIKit
 
 // *** TO DO
 /*
-Declare buttons 0-9, clear, decimal, and enter
-    digits are linked to a @IBAction pressDigit() function that calls addRateDigit using tags
-Create button layout with autolayout. 3 columns plus enter
-create addRateDigit button. Adds digit to rate. 
-    Will use switch statement to handle decimals. use inputMode var
-    for each button press, call updateRateLabel()
-Create updateRateLabel function. Simply updates the label with tempRate. 
-Create setRate() function. Simply saves tempRate to currentRate
-    is called in the enter button
+
 */
 // ***
 
@@ -69,6 +61,10 @@ class ManualRateViewController: UIViewController {
         confirmationLabel.text = "tax rate is now \(currentRate * 100)%"
         rateDisplay.text = "0.0%"
         
+        let def = NSUserDefaults.standardUserDefaults()             // *** Handle setting user default tax rate
+        def.setDouble(currentRate, forKey: "userDefaultTaxRate")
+        def.synchronize()
+        
         button.backgroundColor = ColorLib.gray.standard
     }
     @IBAction func pressDec(button: UIButton!) {
@@ -105,7 +101,7 @@ class ManualRateViewController: UIViewController {
         print("updating tempRate with \(n)")
         switch inputMode {
         case 1:
-            tempRate = addDigitDouble(tempRate, digit: n)
+            tempRate = addDigit(tempRate, digit: n)
         case 2:
             switch digitMode {
             case 1:

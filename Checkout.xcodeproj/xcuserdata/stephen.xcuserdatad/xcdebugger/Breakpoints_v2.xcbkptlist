@@ -26,104 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AllTheGlobals.swift"
-            timestampString = "478205561.127909"
+            timestampString = "489308468.219326"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "531"
-            endingLineNumber = "531">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RateViewController.swift"
-            timestampString = "478206051.808172"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "RateViewController"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Checkout.RateViewController.zipCode.getter : Swift.Int"
-                  moduleName = "Checkout"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/stephen/Desktop/Development/Apps/Checkout/RateViewController.swift"
-                  timestampString = "478205175.962562"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "8">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Checkout.RateViewController.zipCode.setter : Swift.Int"
-                  moduleName = "Checkout"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/stephen/Desktop/Development/Apps/Checkout/RateViewController.swift"
-                  timestampString = "478205175.963812"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "12">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Checkout.RateViewController.zipCode.materializeForSet : Swift.Int"
-                  moduleName = "Checkout"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/stephen/Desktop/Development/Apps/Checkout/RateViewController.swift"
-                  timestampString = "478205175.963947"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "12">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Checkout.RateViewController.init (Checkout.RateViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; Checkout.RateViewController"
-                  moduleName = "Checkout"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/stephen/Desktop/Development/Apps/Checkout/RateViewController.swift"
-                  timestampString = "478205175.964044"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
-                  offsetFromSymbolStart = "130">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Checkout.RateViewController.init (Checkout.RateViewController.Type)(coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;Checkout.RateViewController&gt;"
-                  moduleName = "Checkout"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/stephen/Desktop/Development/Apps/Checkout/RateViewController.swift"
-                  timestampString = "478205175.96426"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
-                  offsetFromSymbolStart = "64">
-               </Location>
-            </Locations>
+            startingLineNumber = "539"
+            endingLineNumber = "539">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

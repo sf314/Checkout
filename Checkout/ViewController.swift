@@ -17,6 +17,7 @@
 
 
 import UIKit
+import CoreData
 
 class MainController: UIViewController {
     
@@ -48,16 +49,13 @@ class MainController: UIViewController {
     // ********** Button actions **********
     
     // Digit
-    @IBAction func pressDigit(button: UIButton!) {pressBlue(button); addDigitToCost(button.tag)}
+    @IBAction func pressDigit(button: UIButton!) {pressBlue(button); appendDigitToCost(button.tag)}
     
     // Decimal
     @IBAction func pressDecimal(button: UIButton!) {pressBlue(button); inputMode = 2}
     
     // Enter
     @IBAction func pressEnter(button: UIButton!) {enterCost(); pressGray(button)}
-    
-    // Backspace
-    //@IBAction func pressBackspace(button: UIButton!) {backSpace(); pressGray(button)}
     
     // Clear
     @IBAction func pressClear(button: UIButton!) {clearAll(); pressGray(button)}
@@ -76,16 +74,16 @@ class MainController: UIViewController {
     updateString()
     updateVars()
     format()
-    addDigitDouble()
+    addDigit()
     mkItemString()
     */
     
     // Add digit to currentCost
-    func addDigitToCost(n: Int) {
+    func appendDigitToCost(n: Int) {
         print("Adding \(n)")
         switch inputMode {
         case 1: // ********** Adding to dollars
-            currentCost = addDigitDouble(currentCost, digit: n)
+            currentCost = addDigit(currentCost, digit: n)
         case 2: // ********** Adding to cents
             switch centCount {
             case 0:
@@ -184,6 +182,8 @@ class MainController: UIViewController {
         print("ViewController loaded")
         currentCost = 0
         costLabel.text = "$0.00"
+            let def = NSUserDefaults.standardUserDefaults() // *** Handle updating from user default tax rate
+            currentRate = def.doubleForKey("userDefaultTaxRate")
         rateLabel.text = "\(currentRate * 100)%"
         printVars()
 
@@ -197,6 +197,8 @@ class MainController: UIViewController {
         
 
     }
+
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

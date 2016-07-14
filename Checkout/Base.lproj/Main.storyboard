@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -402,7 +402,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xi2-OF-rQN">
                                                 <rect key="frame" x="0.0" y="451" width="149.5" height="149"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <state key="normal" title="Clr">
+                                                <state key="normal" title="C">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -646,8 +646,8 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="addDigit:" destination="bPg-dK-XsO" eventType="touchUpInside" id="cy6-cz-Op5"/>
                                                     <action selector="pressButton:" destination="bPg-dK-XsO" eventType="touchDown" id="4Pr-Bd-4I8"/>
+                                                    <action selector="pressDigit:" destination="bPg-dK-XsO" eventType="touchUpInside" id="yPD-W2-IjT"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ouo-or-Pd6">
@@ -658,8 +658,8 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="addDigit:" destination="bPg-dK-XsO" eventType="touchUpInside" id="4Rc-ec-lmJ"/>
                                                     <action selector="pressButton:" destination="bPg-dK-XsO" eventType="touchDown" id="REt-Ec-iGB"/>
+                                                    <action selector="pressDigit:" destination="bPg-dK-XsO" eventType="touchUpInside" id="W3e-8S-Ku9"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLD-LQ-tCN">
@@ -670,8 +670,8 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="addDigit:" destination="bPg-dK-XsO" eventType="touchUpInside" id="kdq-M4-xMO"/>
                                                     <action selector="pressButton:" destination="bPg-dK-XsO" eventType="touchDown" id="MZ9-Tj-lrV"/>
+                                                    <action selector="pressDigit:" destination="bPg-dK-XsO" eventType="touchUpInside" id="aYk-US-oVN"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mci-Ny-dGr">
@@ -700,8 +700,8 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="addDigit:" destination="bPg-dK-XsO" eventType="touchUpInside" id="c5v-XH-XEi"/>
                                                     <action selector="pressButton:" destination="bPg-dK-XsO" eventType="touchDown" id="o9J-qo-ZsP"/>
+                                                    <action selector="pressDigit:" destination="bPg-dK-XsO" eventType="touchUpInside" id="CtT-Wu-vZi"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="5" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bSY-ed-dOd">
@@ -712,8 +712,8 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="addDigit:" destination="bPg-dK-XsO" eventType="touchUpInside" id="bZI-ta-JpT"/>
                                                     <action selector="pressButton:" destination="bPg-dK-XsO" eventType="touchDown" id="vOr-DD-vqg"/>
+                                                    <action selector="pressDigit:" destination="bPg-dK-XsO" eventType="touchUpInside" id="DB9-2B-7oY"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jyp-bB-rNc">
@@ -724,8 +724,8 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="addDigit:" destination="bPg-dK-XsO" eventType="touchUpInside" id="psM-91-W15"/>
                                                     <action selector="pressButton:" destination="bPg-dK-XsO" eventType="touchDown" id="fb5-NA-TpI"/>
+                                                    <action selector="pressDigit:" destination="bPg-dK-XsO" eventType="touchUpInside" id="AmU-YJ-i8K"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbJ-3n-ikg">
@@ -736,8 +736,8 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="addDigit:" destination="bPg-dK-XsO" eventType="touchUpInside" id="COG-Qu-2QI"/>
                                                     <action selector="pressButton:" destination="bPg-dK-XsO" eventType="touchDown" id="wRY-Sn-GmW"/>
+                                                    <action selector="pressDigit:" destination="bPg-dK-XsO" eventType="touchUpInside" id="Y4h-35-gaO"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -754,8 +754,8 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="addDigit:" destination="bPg-dK-XsO" eventType="touchUpInside" id="WlQ-Zb-j0M"/>
                                                     <action selector="pressButton:" destination="bPg-dK-XsO" eventType="touchDown" id="6p2-1d-xam"/>
+                                                    <action selector="pressDigit:" destination="bPg-dK-XsO" eventType="touchUpInside" id="rgc-0S-vyz"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="6" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hS5-6o-bCA">
@@ -766,8 +766,8 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="addDigit:" destination="bPg-dK-XsO" eventType="touchUpInside" id="PFa-tj-tNm"/>
                                                     <action selector="pressButton:" destination="bPg-dK-XsO" eventType="touchDown" id="ZwC-pe-Pce"/>
+                                                    <action selector="pressDigit:" destination="bPg-dK-XsO" eventType="touchUpInside" id="VlY-uL-nmC"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9tA-xg-wnh">
@@ -778,8 +778,8 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="addDigit:" destination="bPg-dK-XsO" eventType="touchUpInside" id="6YZ-18-ruC"/>
                                                     <action selector="pressButton:" destination="bPg-dK-XsO" eventType="touchDown" id="luO-TN-6Qi"/>
+                                                    <action selector="pressDigit:" destination="bPg-dK-XsO" eventType="touchUpInside" id="ubT-gh-s9d"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPL-dC-Sg7">
@@ -827,27 +827,64 @@
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7eN-Px-5FN">
                                 <rect key="frame" x="76" y="57" width="353" height="50"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="00000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KiK-K2-2ig">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="00000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KiK-K2-2ig">
                                         <rect key="frame" x="0.0" y="0.0" width="151" height="50"/>
                                         <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="50"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="105" y="0.0" width="151" height="50"/>
+                                        </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="rateLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZT-2O-B3M">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="rateLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZT-2O-B3M">
                                         <rect key="frame" x="161" y="0.0" width="104" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="129" y="60" width="104" height="30"/>
+                                        </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="errorLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jP1-Y5-gGu">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="errorLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jP1-Y5-gGu">
                                         <rect key="frame" x="274" y="0.0" width="79" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.92668876259999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="141" y="100" width="79" height="21"/>
+                                        </variation>
                                     </label>
                                 </subviews>
-                                <variation key="heightClass=regular-widthClass=compact" alignment="center" axis="vertical"/>
+                                <variation key="heightClass=regular-widthClass=compact" alignment="center" axis="vertical" misplaced="YES">
+                                    <rect key="frame" x="20" y="79" width="360" height="121"/>
+                                </variation>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ei-la-EXe">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.93112752846103897" blue="0.20159274771592217" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Yhz-X0-XrZ"/>
+                                    <constraint firstAttribute="width" constant="105" id="jFJ-af-JEm"/>
+                                </constraints>
+                                <state key="normal" title="ASU">
+                                    <color key="titleColor" red="0.59347380049999998" green="0.0" blue="0.1268924421" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Yhz-X0-XrZ"/>
+                                        <exclude reference="jFJ-af-JEm"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Yhz-X0-XrZ"/>
+                                        <include reference="jFJ-af-JEm"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="asuRate:" destination="bPg-dK-XsO" eventType="touchUpInside" id="231-b5-ppx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -857,27 +894,39 @@
                             <constraint firstItem="zjJ-r4-2jy" firstAttribute="leading" secondItem="68n-Cb-e6j" secondAttribute="leadingMargin" constant="-20" id="aV8-Yh-jHl"/>
                             <constraint firstItem="2EM-AG-OfK" firstAttribute="top" secondItem="QAB-wu-8b5" secondAttribute="bottom" id="gCL-wH-OE4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="QAB-wu-8b5" secondAttribute="trailing" constant="-20" id="gpO-92-Z8u"/>
+                            <constraint firstItem="QAB-wu-8b5" firstAttribute="top" secondItem="7Ei-la-EXe" secondAttribute="bottom" constant="22" id="krr-4A-XbW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7eN-Px-5FN" secondAttribute="trailing" id="rf6-k8-9JV"/>
                             <constraint firstItem="7eN-Px-5FN" firstAttribute="top" secondItem="zjJ-r4-2jy" secondAttribute="bottom" constant="15" id="v65-7U-gui"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zjJ-r4-2jy" secondAttribute="trailing" constant="-20" id="w4G-Aa-O5Y"/>
+                            <constraint firstItem="7Ei-la-EXe" firstAttribute="leading" secondItem="68n-Cb-e6j" secondAttribute="leadingMargin" id="ytV-mY-e2c"/>
                         </constraints>
                         <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="7Ei-la-EXe"/>
+                            </mask>
                             <mask key="constraints">
+                                <exclude reference="ytV-mY-e2c"/>
                                 <exclude reference="3af-rv-8qR"/>
                                 <exclude reference="rf6-k8-9JV"/>
                                 <exclude reference="v65-7U-gui"/>
                                 <exclude reference="WbT-ci-Q7q"/>
                                 <exclude reference="gpO-92-Z8u"/>
+                                <exclude reference="krr-4A-XbW"/>
                                 <exclude reference="gCL-wH-OE4"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="7Ei-la-EXe"/>
+                            </mask>
                             <mask key="constraints">
+                                <include reference="ytV-mY-e2c"/>
                                 <include reference="3af-rv-8qR"/>
                                 <include reference="rf6-k8-9JV"/>
                                 <include reference="v65-7U-gui"/>
                                 <include reference="WbT-ci-Q7q"/>
                                 <include reference="gpO-92-Z8u"/>
+                                <include reference="krr-4A-XbW"/>
                                 <include reference="gCL-wH-OE4"/>
                             </mask>
                         </variation>

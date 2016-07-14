@@ -31,13 +31,13 @@ func roundToTwo(n: Double) -> Double {
 
 
 // Add a digit to a given Double value. Returns the new value.
-func addDigitDouble(val: Double, digit: Int) -> Double {
+func addDigit(val: Double, digit: Int) -> Double {
     return val * 10 + Double(digit)
 }
 
 
 // Add a digit to a given Int value. Returns the new value.
-func addDigitInt(val: Int, digit: Int) -> Int {
+func addDigit(val: Int, digit: Int) -> Int {
     return val * 10 + digit
 }
 
