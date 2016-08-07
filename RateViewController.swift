@@ -44,6 +44,7 @@ class RateViewController: UIViewController {
     // Variables
     var zipCode = 0
     var zipDigits = 0
+    var userHasInteracted = false
     
     // Labels
     @IBOutlet weak var zipLabel: UILabel!
@@ -62,6 +63,7 @@ class RateViewController: UIViewController {
     
     // Press digit
     @IBAction func pressDigit(button: UIButton!) {
+        userHasInteracted = true
         if zipDigits < 5 {
             zipDigits += 1
             zipCode = addDigit(zipCode, digit: button.tag)
@@ -86,7 +88,11 @@ class RateViewController: UIViewController {
     }
     
     // enter zip, save
-    @IBAction func enter(button: UIButton!) {
+    @IBAction func enter(button: UIButton!) {       // Fixed issue with the zipCode = 0 bug!
+        guard userHasInteracted else {
+            print("Guard statement entered:\n\tUser has not yet interacted. Enter button disabled.")
+            return
+        }
         setCurrentRate()
         
         // resetting things without updating the zipLabel
@@ -99,6 +105,7 @@ class RateViewController: UIViewController {
     // clear UI, vars
     @IBAction func clear(button: UIButton!) {
         print("Pressing clear")
+        userHasInteracted = false
         zipCode = 0
         zipDigits = 0
         print("finished resetting zipCode and zipDigits")
@@ -145,6 +152,7 @@ class RateViewController: UIViewController {
         var zeroCount = 0
 
         zeroCount = 5 - zipString.characters.count
+        print("zipString = \(zipString) \nzeroCount = \(zeroCount)")
         for _ in 0..<zeroCount {
             zipString = zipString + "."
         }
@@ -197,6 +205,7 @@ class RateViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         print("RateView loaded")
+        userHasInteracted = false
         printVars()
         errorLabel.text = ""
         zipCode = 0
