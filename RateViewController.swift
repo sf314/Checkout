@@ -10,8 +10,7 @@
 
 // *** TO DO
 /*
-Change default value of zipCode to nil
-- when zipCode is nil, do not do anything when enter is pressed
+
 */
 // ***
 
@@ -91,6 +90,7 @@ class RateViewController: UIViewController {
     @IBAction func enter(button: UIButton!) {       // Fixed issue with the zipCode = 0 bug!
         guard userHasInteracted else {
             print("Guard statement entered:\n\tUser has not yet interacted. Enter button disabled.")
+            releaseOperator(button)
             return
         }
         setCurrentRate()
@@ -98,6 +98,7 @@ class RateViewController: UIViewController {
         // resetting things without updating the zipLabel
         zipCode = 0
         zipDigits = 0
+        userHasInteracted = false
         
         releaseOperator(button)
     }
