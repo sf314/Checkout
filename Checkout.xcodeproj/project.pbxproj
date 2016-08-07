@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DC3C11D41C310215009B9235 /* ColorLib.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C11D31C310215009B9235 /* ColorLib.swift */; };
+		DC45ABEA1D3D91830084104D /* ColorLib.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC45ABE91D3D91830084104D /* ColorLib.swift */; };
 		DC8FE5EC1BFB9A1500197DC8 /* ManualRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8FE5EB1BFB9A1500197DC8 /* ManualRateViewController.swift */; };
 		DC8FE5EE1BFBC47300197DC8 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8FE5ED1BFBC47300197DC8 /* Notes.swift */; };
 		DCC9468D1BF98D720095604A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC9468C1BF98D720095604A /* AppDelegate.swift */; };
@@ -23,7 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DC3C11D31C310215009B9235 /* ColorLib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorLib.swift; path = ../../ColorLib.swift; sourceTree = "<group>"; };
+		DC45ABE91D3D91830084104D /* ColorLib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorLib.swift; sourceTree = "<group>"; };
 		DC8FE5EB1BFB9A1500197DC8 /* ManualRateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ManualRateViewController.swift; path = ../ManualRateViewController.swift; sourceTree = "<group>"; };
 		DC8FE5ED1BFBC47300197DC8 /* Notes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Notes.swift; path = ../Notes.swift; sourceTree = "<group>"; };
 		DCC946891BF98D720095604A /* Checkout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Checkout.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,11 +80,11 @@
 				DCC946A21BF98F2D0095604A /* AllTheGlobals.swift */,
 				DCFF6D011C0AD37800A90472 /* Functions.swift */,
 				DC8FE5ED1BFBC47300197DC8 /* Notes.swift */,
-				DC3C11D31C310215009B9235 /* ColorLib.swift */,
 				DCC946901BF98D720095604A /* Main.storyboard */,
 				DCC946931BF98D720095604A /* Assets.xcassets */,
 				DCC946951BF98D720095604A /* LaunchScreen.storyboard */,
 				DCDCA65E1D298F10006908E5 /* Checkout.xcdatamodeld */,
+				DC45ABE91D3D91830084104D /* ColorLib.swift */,
 				DCC946981BF98D720095604A /* Info.plist */,
 			);
 			path = Checkout;
@@ -166,12 +166,12 @@
 				DCC9469F1BF98DF10095604A /* RateViewController.swift in Sources */,
 				DC8FE5EE1BFBC47300197DC8 /* Notes.swift in Sources */,
 				DCC9468F1BF98D720095604A /* ViewController.swift in Sources */,
-				DC3C11D41C310215009B9235 /* ColorLib.swift in Sources */,
 				DCC946A31BF98F2D0095604A /* AllTheGlobals.swift in Sources */,
 				DCFF6D021C0AD37800A90472 /* Functions.swift in Sources */,
 				DCC946A11BF98E040095604A /* ListViewController.swift in Sources */,
 				DCC9468D1BF98D720095604A /* AppDelegate.swift in Sources */,
 				DCDCA6601D298F10006908E5 /* Checkout.xcdatamodeld in Sources */,
+				DC45ABEA1D3D91830084104D /* ColorLib.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
