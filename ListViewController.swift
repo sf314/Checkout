@@ -29,7 +29,8 @@ class ListViewController: UIViewController {
     @IBOutlet weak var subtotalLabel: UILabel!
     @IBOutlet weak var checkoutLabel: UILabel!
     @IBOutlet weak var taxAddedLabel: UILabel!
-    @IBOutlet var priceListView: UITextView!
+    @IBOutlet weak var priceListView: UITextView!
+    @IBOutlet weak var priceScrollView: UIScrollView!
     
     // Buttons
     
@@ -97,6 +98,12 @@ class ListViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         print("ListView loaded")
+        
+        //priceScrollView.contentSize = CGSize(width: 280, height: 1000)
+        print("Height of scroll view:")
+        print(priceScrollView.contentSize.height)
+        print("Height of text view: \(priceListView.contentSize.height)")
+        
         printVars()
     
         // update labels and vars
