@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-public class CustomColorLibrary {
+open class CustomColorLibrary {
     // Welcome to the Colour Library!
     // To use, simply create a ColorLib object using the class CustomColorLibrary() to instantiate
         // Then you can assign your objects with ColorLib.someColor.someSubset

@@ -46,14 +46,14 @@ class ManualRateViewController: UIViewController {
     @IBOutlet weak var enter: UIButton!
     
     // Button actions
-    @IBAction func pressDigit(button: UIButton!) {
+    @IBAction func pressDigit(_ button: UIButton!) {
         updateTempRate(button.tag)
         updateDisplay()
         checkVars(button)
         
         button.backgroundColor = ColorLib.gray.standard // Touch up events
     }
-    @IBAction func pressEnter(button: UIButton!) {
+    @IBAction func pressEnter(_ button: UIButton!) {
         currentRate = tempRate / 100.0
         tempRate = 0.0
         inputMode = 1
@@ -61,18 +61,18 @@ class ManualRateViewController: UIViewController {
         confirmationLabel.text = "tax rate is now \(currentRate * 100)%"
         rateDisplay.text = "0.0%"
         
-        let def = NSUserDefaults.standardUserDefaults()             // *** Handle setting user default tax rate
-        def.setDouble(currentRate, forKey: "userDefaultTaxRate")
+        let def = UserDefaults.standard             // *** Handle setting user default tax rate
+        def.set(currentRate, forKey: "userDefaultTaxRate")
         def.synchronize()
         
         button.backgroundColor = ColorLib.gray.standard
     }
-    @IBAction func pressDec(button: UIButton!) {
+    @IBAction func pressDec(_ button: UIButton!) {
         inputMode = 2
         
         button.backgroundColor = ColorLib.gray.standard
     }
-    @IBAction func pressClear(button: UIButton!) {
+    @IBAction func pressClear(_ button: UIButton!) {
         inputMode = 1
         tempRate = 0.0
         digitMode = 1
@@ -82,10 +82,10 @@ class ManualRateViewController: UIViewController {
         button.backgroundColor = ColorLib.gray.standard
     }
 
-    @IBAction func touchDownDigit(button: UIButton!) {
+    @IBAction func touchDownDigit(_ button: UIButton!) {
         button.backgroundColor = ColorLib.gray.dark       // touch down event
     }
-    @IBAction func touchDownOperator(button: UIButton!) {
+    @IBAction func touchDownOperator(_ button: UIButton!) {
         button.backgroundColor = ColorLib.gray.dark
     }
     
@@ -97,7 +97,7 @@ class ManualRateViewController: UIViewController {
      addDigitDouble()
      */
     
-    func updateTempRate(n: Int) {
+    func updateTempRate(_ n: Int) {
         print("updating tempRate with \(n)")
         switch inputMode {
         case 1:
@@ -126,7 +126,7 @@ class ManualRateViewController: UIViewController {
         rateDisplay.text = "\(tempRate)%"
     }
     
-    func checkVars(b: UIButton!) {
+    func checkVars(_ b: UIButton!) {
         print("Variables:"
                 + "\n   Digit entered: \(b.tag)"
                 + "\n   tempRate: \(tempRate)"
@@ -162,7 +162,7 @@ class ManualRateViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-        enter.backgroundColor = UIColor.redColor()
+        enter.backgroundColor = UIColor.red
     }
     
     

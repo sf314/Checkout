@@ -49,20 +49,20 @@ class MainController: UIViewController {
     // ********** Button actions **********
     
     // Digit
-    @IBAction func pressDigit(button: UIButton!) {pressBlue(button); appendDigitToCost(button.tag)}
+    @IBAction func pressDigit(_ button: UIButton!) {pressBlue(button); appendDigitToCost(button.tag)}
     
     // Decimal
-    @IBAction func pressDecimal(button: UIButton!) {pressBlue(button); inputMode = 2}
+    @IBAction func pressDecimal(_ button: UIButton!) {pressBlue(button); inputMode = 2}
     
     // Enter
-    @IBAction func pressEnter(button: UIButton!) {enterCost(); pressGray(button)}
+    @IBAction func pressEnter(_ button: UIButton!) {enterCost(); pressGray(button)}
     
     // Clear
-    @IBAction func pressClear(button: UIButton!) {clearAll(); pressGray(button)}
+    @IBAction func pressClear(_ button: UIButton!) {clearAll(); pressGray(button)}
     
     // Release
-    @IBAction func releaseBlue(button: UIButton!) {normBlue(button)}
-    @IBAction func releaseGray(button: UIButton!) {normGray(button)}
+    @IBAction func releaseBlue(_ button: UIButton!) {normBlue(button)}
+    @IBAction func releaseGray(_ button: UIButton!) {normGray(button)}
     
     
     
@@ -79,7 +79,7 @@ class MainController: UIViewController {
     */
     
     // Add digit to currentCost
-    func appendDigitToCost(n: Int) {
+    func appendDigitToCost(_ n: Int) {
         print("Adding \(n)")
         switch inputMode {
         case 1: // ********** Adding to dollars
@@ -166,11 +166,11 @@ class MainController: UIViewController {
     }
     
     // Change button color functions
-    func normBlue(button: UIButton!) {button.backgroundColor = ColorLib.blue.standard}
-    func pressBlue(button: UIButton!) {button.backgroundColor = ColorLib.blue.dark}
+    func normBlue(_ button: UIButton!) {button.backgroundColor = ColorLib.blue.standard}
+    func pressBlue(_ button: UIButton!) {button.backgroundColor = ColorLib.blue.dark}
     
-    func normGray(button: UIButton!) {button.backgroundColor = ColorLib.gray.standard}
-    func pressGray(button: UIButton!) {button.backgroundColor = ColorLib.gray.dark}
+    func normGray(_ button: UIButton!) {button.backgroundColor = ColorLib.gray.standard}
+    func pressGray(_ button: UIButton!) {button.backgroundColor = ColorLib.gray.dark}
     
     
     
@@ -182,8 +182,8 @@ class MainController: UIViewController {
         print("ViewController loaded")
         currentCost = 0
         costLabel.text = "$0.00"
-            let def = NSUserDefaults.standardUserDefaults() // *** Handle updating from user default tax rate
-            currentRate = def.doubleForKey("userDefaultTaxRate")
+            let def = UserDefaults.standard // *** Handle updating from user default tax rate
+            currentRate = def.double(forKey: "userDefaultTaxRate")
         rateLabel.text = "\(currentRate * 100)%"
         printVars()
 
@@ -203,7 +203,7 @@ class MainController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-        ent.backgroundColor = UIColor.redColor()
+        ent.backgroundColor = UIColor.red
     }
 
 

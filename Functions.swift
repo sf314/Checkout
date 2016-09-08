@@ -16,13 +16,13 @@ import Foundation
 
 
 // Add tax to a subtotal. Returns total including tax
-func addTax(subtotal: Double, taxRate: Double) -> Double {
+func addTax(_ subtotal: Double, taxRate: Double) -> Double {
     return (subtotal + (subtotal * taxRate))
 }
 
 
 // Rounds a double to two decimal points (really only for the final total). Returns rounded value.
-func roundToTwo(n: Double) -> Double {
+func roundToTwo(_ n: Double) -> Double {
     // Multiply by 100
     // Truncate
     // Divide by 100
@@ -31,13 +31,13 @@ func roundToTwo(n: Double) -> Double {
 
 
 // Add a digit to a given Double value. Returns the new value.
-func addDigit(val: Double, digit: Int) -> Double {
+func addDigit(_ val: Double, digit: Int) -> Double {
     return val * 10 + Double(digit)
 }
 
 
 // Add a digit to a given Int value. Returns the new value.
-func addDigit(val: Int, digit: Int) -> Int {
+func addDigit(_ val: Int, digit: Int) -> Int {
     return val * 10 + digit
 }
 
@@ -55,7 +55,7 @@ func addDigit(val: Int, digit: Int) -> Int {
 
 
 // Update big list of strings using an array as input (make sure array is updated prior!!)
-func updateString(someArray: [Double]) {
+func updateString(_ someArray: [Double]) {
     priceListString = ""
     for value in someArray {
         priceListString += "\(format(value))\n"
@@ -79,14 +79,15 @@ func updateVars() {
 
 
 // Format a cost for printing as a string. Return string
-let nsNumForm = NSNumberFormatter()
+let nsNumForm = NumberFormatter()
 
-func format(n: Double) -> String {
+func format(_ n: Double) -> String {
     // Set the style
-    nsNumForm.numberStyle = .CurrencyStyle
+    nsNumForm.numberStyle = .currency
     
     // Var
-    let formattedString = nsNumForm.stringFromNumber(n)
+    //let formattedString = nsNumForm.string(from: NSNumber(n))
+    let formattedString = nsNumForm.string(from: n as NSNumber)
     
     print(formattedString)
     return formattedString!
@@ -101,7 +102,7 @@ func printVars() {
 
 
 // Handle singular and plural items. mkItemString
-func mkItemString(n: Int) -> String {
+func mkItemString(_ n: Int) -> String {
     if n == 1 {
         return "1 item"
     } else {

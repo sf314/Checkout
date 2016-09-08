@@ -21,7 +21,7 @@ import UIKit
 class RateViewController: UIViewController {
     
     // ***** Presets
-    @IBAction func homeRate(sender: UIButton) {
+    @IBAction func homeRate(_ sender: UIButton) {
         zipCode = 85395
         setCurrentRate()
         zipCode = 0
@@ -29,7 +29,7 @@ class RateViewController: UIViewController {
         zipLabel.text = "85395"
     }
     
-    @IBAction func asuRate(sender: UIButton) {
+    @IBAction func asuRate(_ sender: UIButton) {
         zipCode = 85287
         setCurrentRate()
         zipCode = 0
@@ -61,7 +61,7 @@ class RateViewController: UIViewController {
         // Pass button.tag
     
     // Press digit
-    @IBAction func pressDigit(button: UIButton!) {
+    @IBAction func pressDigit(_ button: UIButton!) {
         userHasInteracted = true
         if zipDigits < 5 {
             zipDigits += 1
@@ -78,7 +78,7 @@ class RateViewController: UIViewController {
     }
     
     // backspace
-    @IBAction func backspace(button: UIButton!) {
+    @IBAction func backspace(_ button: UIButton!) {
         zipCode = zipCode / 10
         zipDigits -= 1
         zipLabel.text = zipToString()
@@ -87,7 +87,7 @@ class RateViewController: UIViewController {
     }
     
     // enter zip, save
-    @IBAction func enter(button: UIButton!) {       // Fixed issue with the zipCode = 0 bug!
+    @IBAction func enter(_ button: UIButton!) {       // Fixed issue with the zipCode = 0 bug!
         guard userHasInteracted else {
             print("Guard statement entered:\n\tUser has not yet interacted. Enter button disabled.")
             releaseOperator(button)
@@ -104,7 +104,7 @@ class RateViewController: UIViewController {
     }
     
     // clear UI, vars
-    @IBAction func clear(button: UIButton!) {
+    @IBAction func clear(_ button: UIButton!) {
         print("Pressing clear")
         userHasInteracted = false
         zipCode = 0
@@ -119,11 +119,11 @@ class RateViewController: UIViewController {
     }
     
     // control colors
-    @IBAction func pressButton(button: UIButton!) {button.backgroundColor = ColorLib.gray.dark}
-    func releaseButton(button: UIButton!) {button.backgroundColor = ColorLib.gray.standard}
+    @IBAction func pressButton(_ button: UIButton!) {button.backgroundColor = ColorLib.gray.dark}
+    func releaseButton(_ button: UIButton!) {button.backgroundColor = ColorLib.gray.standard}
     
-   @IBAction func pressOperator(button: UIButton!) {button.backgroundColor = ColorLib.gray.dark}
-    func releaseOperator(button: UIButton!) {button.backgroundColor = ColorLib.gray.standard}
+   @IBAction func pressOperator(_ button: UIButton!) {button.backgroundColor = ColorLib.gray.dark}
+    func releaseOperator(_ button: UIButton!) {button.backgroundColor = ColorLib.gray.standard}
     
     
     
@@ -138,7 +138,7 @@ class RateViewController: UIViewController {
      */
     
     // Remove digit from ZIP, update label
-    func removeDigit(n: Int) -> Int {
+    func removeDigit(_ n: Int) -> Int {
         return n / 10
     }
     
@@ -174,8 +174,8 @@ class RateViewController: UIViewController {
                 print("Valid zip code found")
                 print("zipDictionary[zipCode] = \(zipDictionary[zipCode])")
                 currentRate = instanceRate
-                    let def = NSUserDefaults.standardUserDefaults()         // *** Handle setting new user default tax rate
-                    def.setDouble(currentRate, forKey: "userDefaultTaxRate")
+                    let def = UserDefaults.standard         // *** Handle setting new user default tax rate
+                    def.set(currentRate, forKey: "userDefaultTaxRate")
                     def.synchronize()
                 rateLabel.text = "\(instanceRate * 100)%"
                 errorLabel.text = ""
@@ -233,7 +233,7 @@ class RateViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-        enterz.backgroundColor = UIColor.redColor()
+        enterz.backgroundColor = UIColor.red
     }
     
     
