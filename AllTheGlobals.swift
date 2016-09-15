@@ -18,29 +18,23 @@ var userDefaultTaxRate = 8.8
 //var
 
 
-// Rates
-// Can set default rate by zipCode, i.e. defaultRate = zipDictionary[85395]
-let asuRate = 0.081
-let goodyearRate = 0.088
-var currentRate = 0.081
-
 // Strings
-var priceListString =   "Items: \n" +
-                        "First one \n" +
-                        "Second one \n";
-
+//var priceListString =   "Items: \n" +
+//                        "First one \n" +
+//                        "Second one \n";
+//
 
 // values
-var totalCost = 0.0
-var checkoutCost = 0.0
-var currentCost = 0.0
-var itemCount = 0
-var subtotal = 0.0
-var taxAdded = 0.0
+//var totalCost = 0.0
+//var checkoutCost = 0.0
+//var currentCost = 0.0
+//var itemCount = 0
+//var subtotal = 0.0
+//var taxAdded = 0.0
 
 
 // Array
-var priceArray: [Double] = []
+//var priceArray: [Double] = []
 
 
 

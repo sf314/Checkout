@@ -7,7 +7,7 @@
 //
 
 
-/*
+/* // Has changed a lot since the beginning
 
 Views: List, Add, Rate, Manual Rate
 

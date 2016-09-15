@@ -128,7 +128,7 @@ func zipToString() -> String {
     
     // Handle leading zeroes (.length)
     zeroCount = 5 - zipString.characters.count
-    for (var i = 1; i <= zeroCount; i++) {
+    for _ in 1..<zeroCount {
         zipString = zipString + "0"
     }
     

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-open class CustomColorLibrary {
+class CustomColorLibrary {
     // Welcome to the Colour Library!
     // To use, simply create a ColorLib object using the class CustomColorLibrary() to instantiate
         // Then you can assign your objects with ColorLib.someColor.someSubset
@@ -38,7 +38,7 @@ class Grays {
 
 // Greens
 class Greens {
-    let standard = UIColor(red: 52, green: 171, blue: 58, alpha: 1)
+    let standard = UIColor(red: 52/255, green: 171/255, blue: 58/255, alpha: 1)
 }
 
 

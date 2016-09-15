@@ -24,13 +24,13 @@ class MainController: UIViewController {
     
     // ********** Delcarations **********
     
+    // MARK: - Variables
     let ColorLib = CustomColorLibrary()
-    
-    // Variables (including colors)
     var inputMode = 1
     var centCount = 0
+    var currentCost = 0.0
     
-    // Labels
+    // MARK: - Labels
     @IBOutlet weak var costLabel: UILabel!
     @IBOutlet weak var itemCountLabel: UILabel!
     @IBOutlet weak var checkoutCostLabel: UILabel!
@@ -38,7 +38,7 @@ class MainController: UIViewController {
 
     
 
-    // ********** Button References
+    // MARK: - Button References
     @IBOutlet weak var yi: UIButton!; @IBOutlet weak var er: UIButton!; @IBOutlet weak var san: UIButton!;
     @IBOutlet weak var si: UIButton!; @IBOutlet weak var wu: UIButton!; @IBOutlet weak var liu: UIButton!;
     @IBOutlet weak var qi: UIButton!; @IBOutlet weak var ba: UIButton!; @IBOutlet weak var jiu: UIButton!;
@@ -46,7 +46,7 @@ class MainController: UIViewController {
     
     @IBOutlet weak var clr: UIButton!; @IBOutlet weak var ent: UIButton!
 
-    // ********** Button actions **********
+    // MARK: - Button actions
     
     // Digit
     @IBAction func pressDigit(_ button: UIButton!) {pressBlue(button); appendDigitToCost(button.tag)}
@@ -67,16 +67,7 @@ class MainController: UIViewController {
     
     
     
-    // ********** Functions **********
-    
-    // This file calls the following global functions:
-    /*
-    updateString()
-    updateVars()
-    format()
-    addDigit()
-    mkItemString()
-    */
+    // MARK: - Functions
     
     // Add digit to currentCost
     func appendDigitToCost(_ n: Int) {
@@ -101,19 +92,19 @@ class MainController: UIViewController {
             print("inputMode neither one or two! ERR!")
         }
         
-        updateVars()
-        costLabel.text = format(currentCost)
+        //updateVars()
+        costLabel.text = cart.format(currentCost)
     }
     
     // Apply currentCost to the array
     func enterCost() {
-        priceArray.append(currentCost)
+        cart.add(cost: currentCost)
         currentCost = 0
         centCount = 0
         inputMode = 1
         
         // Calcualte subtotal and handle labels
-        updateVars()
+        //updateVars()
         updateAllLabels()
         costLabel.text = "$0.00"
     }
@@ -122,7 +113,7 @@ class MainController: UIViewController {
     func clearAll() {
         // only get rid of currentCost
         currentCost = 5 - 5
-        costLabel.text = format(currentCost)
+        costLabel.text = cart.format(currentCost)
         inputMode = 1
         centCount = 0
     }
@@ -151,18 +142,20 @@ class MainController: UIViewController {
         }
         
         //print("cost: \(currentCost)\ninputMode: \(inputMode)\ncentCount: \(centCount)")
-        costLabel.text = format(currentCost)
+        costLabel.text = cart.format(currentCost)
     }
 
     
 
     
-    // Update all the labels
+    // MARK: - Update UI
     func updateAllLabels() {
         // Not taxrate, not costlabel (set to zero after hitting enter)
         // Just itemCount and checkout
-        itemCountLabel.text = mkItemString(itemCount)
-        checkoutCostLabel.text = format(checkoutCost)
+        itemCountLabel.text = cart.itemCount()
+        checkoutCostLabel.text = cart.checkoutCost()
+        //rateLabel.text = cart.rateToPercent(cart.currentRate)
+        rateLabel.text = "\(cart.currentRate * 100)%"
     }
     
     // Change button color functions
@@ -174,28 +167,25 @@ class MainController: UIViewController {
     
     
     
-    
+    // MARK: - Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        restoreUserDefaults()
 
         print("ViewController loaded")
         currentCost = 0
         costLabel.text = "$0.00"
-            let def = UserDefaults.standard // *** Handle updating from user default tax rate
-            currentRate = def.double(forKey: "userDefaultTaxRate")
-        rateLabel.text = "\(currentRate * 100)%"
+        rateLabel.text = "\(cart.currentRate * 100)%"
         printVars()
 
         // Update vars and labels
-        updateVars()
         updateAllLabels()
         
         // Update button colors for safety?
         releaseBlue(yi); releaseBlue(er); releaseBlue(san); releaseBlue(si); releaseBlue(wu); releaseBlue(liu); releaseBlue(qi); releaseBlue(ba); releaseBlue(jiu); releaseBlue(ling); releaseBlue(dec)
         releaseGray(clr); releaseGray(ent)
         
-
     }
 
 

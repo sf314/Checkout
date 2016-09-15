@@ -54,15 +54,15 @@ class ManualRateViewController: UIViewController {
         button.backgroundColor = ColorLib.gray.standard // Touch up events
     }
     @IBAction func pressEnter(_ button: UIButton!) {
-        currentRate = tempRate / 100.0
+        _ = cart.setRate(to: tempRate / 100.0)
         tempRate = 0.0
         inputMode = 1
         digitMode = 1
-        confirmationLabel.text = "tax rate is now \(currentRate * 100)%"
+        confirmationLabel.text = "tax rate is now \(cart.currentRate * 100)%"
         rateDisplay.text = "0.0%"
         
         let def = UserDefaults.standard             // *** Handle setting user default tax rate
-        def.set(currentRate, forKey: "userDefaultTaxRate")
+        def.set(cart.currentRate, forKey: "userDefaultTaxRate")
         def.synchronize()
         
         button.backgroundColor = ColorLib.gray.standard
@@ -131,7 +131,7 @@ class ManualRateViewController: UIViewController {
                 + "\n   Digit entered: \(b.tag)"
                 + "\n   tempRate: \(tempRate)"
                 + "\n   inputMode: \(inputMode), digitMode: \(digitMode)"
-                + "\n   currentRate: \(currentRate)")
+                + "\n   currentRate: \(cart.currentRate)")
     }
     
     

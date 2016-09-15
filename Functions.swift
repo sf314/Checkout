@@ -16,18 +16,11 @@ import Foundation
 
 
 // Add tax to a subtotal. Returns total including tax
-func addTax(_ subtotal: Double, taxRate: Double) -> Double {
-    return (subtotal + (subtotal * taxRate))
-}
+// func addTax(_ subtotal: Double, taxRate: Double) -> Double
 
 
 // Rounds a double to two decimal points (really only for the final total). Returns rounded value.
-func roundToTwo(_ n: Double) -> Double {
-    // Multiply by 100
-    // Truncate
-    // Divide by 100
-    return Double(Int(n * 100)) / 100
-}
+// func roundToTwo(_ n: Double) -> Double
 
 
 // Add a digit to a given Double value. Returns the new value.
@@ -42,70 +35,85 @@ func addDigit(_ val: Int, digit: Int) -> Int {
 }
 
 
-//    // Append a cost string to the big list of strings. Simply updates.
-//    func addCostToListString(someCost: Double) {
-//        // Make sure the cost is rounded
-//        let cost = roundToTwo(someCost)
-//        
-//        // Add the cost with a carriage return
-//        priceListString += "$\(cost)\n"
-//            // Must use actual string variable. Cannot do otherwise.
-//        
-//    }
-
-
-// Update big list of strings using an array as input (make sure array is updated prior!!)
-func updateString(_ someArray: [Double]) {
-    priceListString = ""
-    for value in someArray {
-        priceListString += "\(format(value))\n"
-        // May need to roundToTwo the value here!
-    }
-}
-
-
-// Update the other values given priceArray and taxRate
-func updateVars() {
-    var sum = 0.0
-    for value in priceArray {
-        sum += value
-    }
-    
-    subtotal = sum
-    checkoutCost = subtotal + (subtotal * currentRate)
-    itemCount = priceArray.count
-    taxAdded = subtotal * currentRate
-}
-
-
-// Format a cost for printing as a string. Return string
-let nsNumForm = NumberFormatter()
-
-func format(_ n: Double) -> String {
-    // Set the style
-    nsNumForm.numberStyle = .currency
-    
-    // Var
-    //let formattedString = nsNumForm.string(from: NSNumber(n))
-    let formattedString = nsNumForm.string(from: n as NSNumber)
-    
-    print(formattedString)
-    return formattedString!
-}
-
-
 // For debugging, print all values
+// FIXME: - Implement Cart::toString()
 func printVars() {
-//    print("\nPrintVars: **********")
-//    print("currentCost \t\(currentCost)\nsubtotal \t\t\(subtotal)\ntaxAdded \t\t\(taxAdded)\ncheckoutCost \t\(checkoutCost)\nitemCount \t\t\(itemCount)\n**********\n")
+    //cart.toString() // Need to implement
 }
 
 
-// Handle singular and plural items. mkItemString
-func mkItemString(_ n: Int) -> String {
-    if n == 1 {
-        return "1 item"
-    } else {
-        return "\(n) items"
-    }
-}
+
+
+
+
+
+
+
+
+
+
+/* Must replace logic and data handling with new system!
+ Using CoreData, it'll be able to remember what was in your cart between restarts!
+ Needs: 
+    - store full list of prices (and be able to return its string)
+    - store current rate
+ 
+ 
+ Checkout class:
+ 
+ vars:
+ 
+ public funcs:
+ 
+ private funcs:
+ 
+ 
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

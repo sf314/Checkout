@@ -20,24 +20,25 @@ import UIKit
 
 class RateViewController: UIViewController {
     
-    // ***** Presets
+    // MARK: - Presets
     @IBAction func homeRate(_ sender: UIButton) {
-        zipCode = 85395
-        setCurrentRate()
+        errorLabel.text = cart.setRate(fromZip: 85395)
         zipCode = 0
         zipDigits = 0
         zipLabel.text = "85395"
     }
     
     @IBAction func asuRate(_ sender: UIButton) {
-        zipCode = 85287
-        setCurrentRate()
+        errorLabel.text = cart.setRate(fromZip: 85287)
         zipCode = 0
         zipDigits = 0
         zipLabel.text = "85287"
         errorLabel.text = "Set to ASU-Tempe tax rate"
+        rateLabel.text = cart.rateToPercent(cart.currentRate)
+        saveUserDefaults()
     }
     
+    // MARK: - Variables
     let ColorLib = CustomColorLibrary()
     
     // Variables
@@ -45,12 +46,11 @@ class RateViewController: UIViewController {
     var zipDigits = 0
     var userHasInteracted = false
     
-    // Labels
+    // MARK: - Labels and Buttons
     @IBOutlet weak var zipLabel: UILabel!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var rateLabel: UILabel!
     
-    // ********** Button outlets for color and whatnot
     @IBOutlet weak var onez: UIButton!; @IBOutlet weak var twoz: UIButton!; @IBOutlet weak var threez: UIButton!
     @IBOutlet weak var fourz: UIButton!; @IBOutlet weak var fivez: UIButton!; @IBOutlet weak var sixz: UIButton!
     @IBOutlet weak var sevenz: UIButton!; @IBOutlet weak var eightz: UIButton!; @IBOutlet weak var ninez: UIButton!
@@ -60,7 +60,7 @@ class RateViewController: UIViewController {
     // ********** Button actions: add digit, clear, enter, back, touch down, touch up, touch drag outside
         // Pass button.tag
     
-    // Press digit
+    // MARK: - Button functions
     @IBAction func pressDigit(_ button: UIButton!) {
         userHasInteracted = true
         if zipDigits < 5 {
@@ -87,13 +87,15 @@ class RateViewController: UIViewController {
     }
     
     // enter zip, save
-    @IBAction func enter(_ button: UIButton!) {       // Fixed issue with the zipCode = 0 bug!
+    @IBAction func enter(_ button: UIButton!) {
         guard userHasInteracted else {
             print("Guard statement entered:\n\tUser has not yet interacted. Enter button disabled.")
             releaseOperator(button)
             return
         }
-        setCurrentRate()
+        errorLabel.text = cart.setRate(fromZip: zipCode)
+        print("currentRate = \(cart.currentRate)")
+        rateLabel.text = cart.rateToPercent(cart.currentRate)
         
         // resetting things without updating the zipLabel
         zipCode = 0
@@ -101,6 +103,7 @@ class RateViewController: UIViewController {
         userHasInteracted = false
         
         releaseOperator(button)
+        saveUserDefaults()
     }
     
     // clear UI, vars
@@ -118,7 +121,7 @@ class RateViewController: UIViewController {
         print("finished releaseOperator() function")
     }
     
-    // control colors
+    // MARK: - Button UI
     @IBAction func pressButton(_ button: UIButton!) {button.backgroundColor = ColorLib.gray.dark}
     func releaseButton(_ button: UIButton!) {button.backgroundColor = ColorLib.gray.standard}
     
@@ -130,12 +133,7 @@ class RateViewController: UIViewController {
     
     
     
-    /****** Functions ******/
-    
-     // This file calls the following functions:
-     /*
-     addDigit()
-     */
+    // MARK: - Functions
     
     // Remove digit from ZIP, update label
     func removeDigit(_ n: Int) -> Int {
@@ -166,38 +164,7 @@ class RateViewController: UIViewController {
     }
     
     // set new currentRate given a vaild zipCode 
-    func setCurrentRate() {
-        
-        if zipCode != 0 {
-            print("setting currentRate with code \(zipCode)")
-            if let instanceRate = zipDictionary[zipCode] {
-                print("Valid zip code found")
-                print("zipDictionary[zipCode] = \(zipDictionary[zipCode])")
-                currentRate = instanceRate
-                    let def = UserDefaults.standard         // *** Handle setting new user default tax rate
-                    def.set(currentRate, forKey: "userDefaultTaxRate")
-                    def.synchronize()
-                rateLabel.text = "\(instanceRate * 100)%"
-                errorLabel.text = ""
-                updateVars()
-            } else {
-                print("invalid zip code")
-                errorLabel.text = "ZIP code not found!"
-            }
-            
-            switch zipCode {
-            case 90210:
-                errorLabel.text = "Rubbish"
-            case 31415:
-                errorLabel.text = "3.1415926535897932384626433832795"
-            default:
-                print("")
-            }
-        } else {
-            print("zipCode is zero");
-        }
-    }
-    
+
     
     
     
@@ -212,21 +179,13 @@ class RateViewController: UIViewController {
         zipCode = 0
         zipDigits = 0
         zipLabel.text = "....."
-        rateLabel.text = "\(currentRate * 100)%"
+        rateLabel.text = "\(cart.rateToPercent(cart.currentRate))%"
         
         // Set default button colour
-        releaseButton(zeroz)
-        releaseButton(onez)
-        releaseButton(twoz)
-        releaseButton(threez)
-        releaseButton(fourz)
-        releaseButton(fivez)
-        releaseButton(sixz)
-        releaseButton(sevenz)
-        releaseButton(eightz)
-        releaseButton(ninez)
-        releaseOperator(enterz)
-        releaseOperator(backz)
+        releaseButton(zeroz); releaseButton(onez); releaseButton(twoz)
+        releaseButton(threez); releaseButton(fourz); releaseButton(fivez)
+        releaseButton(sixz); releaseButton(sevenz); releaseButton(eightz)
+        releaseButton(ninez); releaseOperator(enterz); releaseOperator(backz)
         releaseOperator(clearz)
     }
     

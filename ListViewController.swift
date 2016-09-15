@@ -23,45 +23,23 @@ class ListViewController: UIViewController {
     
     // Vars
     
-    // Labels
-    //@IBOutlet weak var listLabel: UILabel!
+    // MARK: - UI
     @IBOutlet weak var itemCountLabel: UILabel!
     @IBOutlet weak var subtotalLabel: UILabel!
     @IBOutlet weak var checkoutLabel: UILabel!
     @IBOutlet weak var taxAddedLabel: UILabel!
     @IBOutlet var priceListView: UITextView!
     
-    // Buttons
-    
+    // MARK: - Buttons
     @IBAction func removeLastEntry() {
-        // Remove last array element
-        priceArray.removeLast()
-        
-        // Update priceListString
-        updateString(priceArray)
-        
-        // Update labels and vars
-        updateVars()
+        cart.undo()
         updateLabels()
     }
     
     @IBAction func removeAllEntries() {
         // Rempve all arreay elements
-        priceArray.removeAll()
-        
-        // Update things to def values (except taxRate)
-        updateString(priceArray)
-            // vars
-            subtotal = 0
-            taxAdded = 0
-            checkoutCost = 0
-            itemCount = 0
-        
-        // Update labels and vars
-        updateVars()
+        cart.clear()
         updateLabels()
-        
-        
     }
     
     
@@ -69,38 +47,28 @@ class ListViewController: UIViewController {
     
     
     
-    // ********** Functions **********
-    
-    // This file calls the following functions:
-    /*
-    updateString(someArray: [Double])
-    
-    */
+    // MARK: - Functions
     
     // Update all labels with one Swift stroke (and the textView)
     func updateLabels() {
-        subtotalLabel.text = format(subtotal)
-        taxAddedLabel.text = format(taxAdded)
-        checkoutLabel.text = format(checkoutCost)
+        subtotalLabel.text = cart.subtotal()
+        taxAddedLabel.text = cart.taxAdded()
+        checkoutLabel.text = cart.checkoutCost()
         
-        itemCountLabel.text = mkItemString(itemCount)
-        
-        updateString(priceArray)
-        priceListView.text = priceListString
+        itemCountLabel.text = cart.itemCount()
+        priceListView.text = cart.priceList()
     }
     
     
     
-    
+    // MARK: - Overrides
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         print("ListView loaded")
-        printVars()
-    
-        // update labels and vars
-        updateVars()
+        print("currentRate = \(cart.currentRate)")
+        //printVars()
         updateLabels()
     }
     
