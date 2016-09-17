@@ -58,7 +58,7 @@ class ManualRateViewController: UIViewController {
         tempRate = 0.0
         inputMode = 1
         digitMode = 1
-        confirmationLabel.text = "tax rate is now \(cart.currentRate * 100)%"
+        confirmationLabel.text = "tax rate is now \(cart.currentRate.asPercent())"
         rateDisplay.text = "0.0%"
         
         let def = UserDefaults.standard             // *** Handle setting user default tax rate

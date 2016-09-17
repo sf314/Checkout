@@ -93,7 +93,7 @@ class MainController: UIViewController {
         }
         
         //updateVars()
-        costLabel.text = cart.format(currentCost)
+        costLabel.text = currentCost.asPrice()
     }
     
     // Apply currentCost to the array
@@ -113,7 +113,7 @@ class MainController: UIViewController {
     func clearAll() {
         // only get rid of currentCost
         currentCost = 5 - 5
-        costLabel.text = cart.format(currentCost)
+        costLabel.text = currentCost.asPrice()
         inputMode = 1
         centCount = 0
     }
@@ -142,7 +142,7 @@ class MainController: UIViewController {
         }
         
         //print("cost: \(currentCost)\ninputMode: \(inputMode)\ncentCount: \(centCount)")
-        costLabel.text = cart.format(currentCost)
+        costLabel.text = currentCost.asPrice()
     }
 
     

@@ -56,30 +56,30 @@ class Cart {
     }
     
     // MARK: - Internal Functions
-    func format(_ n: Double) -> String {
-        // Set the style
-        let numForm = NumberFormatter()
-        numForm.numberStyle = .currency
-        let formattedString = numForm.string(from: n as NSNumber)
-        
-        return formattedString!
-    }
+//    func format(_ n: Double) -> String {
+//        // Set the style
+//        let numForm = NumberFormatter()
+//        numForm.numberStyle = .currency
+//        let formattedString = numForm.string(from: n as NSNumber)
+//        
+//        return formattedString!
+//    }
     
     // MARK: - Public Number Funcs
     
     func taxAdded() -> String {
         let t = subtotalPrvt * currentRate
-        return format(t)
+        return t.asPrice()
     }
     
     func checkoutCost() -> String {
         let m = subtotalPrvt + (subtotalPrvt * currentRate)
-        let t = format(m)
+        let t = m.asPrice()
         return t
     }
     
     func subtotal() -> String {
-        return format(subtotalPrvt)
+        return subtotalPrvt.asPrice()
     }
     
     func setRate(to n: Double) -> String { // just obj.currentRate = .....?
@@ -95,7 +95,7 @@ class Cart {
         }
         
         if let newRate = zipDictionary[zip] {
-            setRate(to: newRate)
+            _ =  setRate(to: newRate)
             print("currentRate = \(currentRate)")
             print("newRate = \(newRate)")
             
@@ -137,7 +137,7 @@ class Cart {
     func priceList() -> String {
         var s = ""
         for item in cartArray {
-            s += format(item) + "\n"
+            s += item.asPrice() + "\n"
         }
         return s
     }
@@ -162,12 +162,29 @@ class Cart {
         cartArray.removeLast()
         print("New state: \n\(priceList())")
     }
+    
 }
 
 
 let cart = Cart()
 
 
+
+// MARK: - Extensions
+extension Double {
+    func asPercent() -> String {
+        return "\(Double(Int(self * 10000)) / 100.0)%"
+    }
+    
+    func asPrice() -> String {
+        // Set the style
+        let numForm = NumberFormatter()
+        numForm.numberStyle = .currency
+        let formattedString = numForm.string(from: self as NSNumber)
+        
+        return formattedString!
+    }
+}
 
 
 
